@@ -1,0 +1,266 @@
+# 配列の要素への代入
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+name[ 3 ] = "d"
+test[ 3 ] = 90
+
+print( name )
+print( test )
+
+# 最後の要素への追加①
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+name.append( "F" )
+test.append( 70 )
+
+print( name )
+print( test )
+
+# 平均点を求める①
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+sum = 0
+for i in range( len(test) ):
+    sum += test[ i ]
+
+print( "Average --> " , int( sum / len(test) ) )
+
+# 平均点を求める②
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+sum = 0
+i = 0
+while i < len(test):
+    sum += test[i]
+    i += 1
+print( "Average --> " , int( sum / len(test) ) )
+
+# 平均点を求める③
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+sum = 0
+for x in test:
+	sum += x
+
+print( "Average --> " , int( sum / len(test) ) )
+
+# 平均点未満の名前を出力①
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+sum = 0
+for x in test:
+	sum += x
+average = int( sum / len(test) )
+
+print( "平均点未満は..." )
+for i in range(len(test)):
+	if average > test[ i ]:
+		print( name[ i ] , ": " , test[ i ] , "点" )
+
+# 平均点未満の名前を出力②
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+sum = 0
+for x in test:
+	sum += x
+average = int( sum / len(test) )
+
+print( "平均点未満は..." )
+for i , x in enumerate(test):
+	if average > x:
+		print( name[ i ] , ": " , x , "点" )
+
+# 最高点とその名前を出力①
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+max = 0
+for i in range(1,len(test)):
+	if test[ max ] < test[ i ]:
+		max = i
+
+print( "最高点は" , name[ max ] , " の " , test[ max ] , "点です" )
+
+# 最高点とその名前を出力②
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+top = 0
+max = test[top]
+for i , x in enumerate(test):
+    if max < x:
+       max = x
+       top = i
+
+print( "最高点は" , name[ top ] , " の " , max , "点です" )
+
+# 最低点とその名前を出力
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+min = 0
+for i in range(1,len(test)):
+    if test[ min ] > test[ i ]:
+       min = i
+	
+print( "最低点は" , name[ min ] , " の " , test[ min ] , "点です" )
+
+# 検索①
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+search = "B"
+for i in range(len(name)):
+    if name[ i ] == search:
+       print( search , " の点は " , test[ i ] , "点です" )
+       break
+
+# 検索②
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+search = 60
+for i in range(len(test)):
+    if test[ i ] == search:
+       print( search , " 点は " , name[ i ] , "です" )
+       break
+
+# コマンドライン引数④
+import sys
+print( sys.argv[ 0 ] )
+print( sys.argv[ 1 ] )
+print( sys.argv[ 2 ] )
+print( sys.argv[ 3 ] )
+print( len(sys.argv) )
+
+# コマンドライン引数：プログラム
+import sys
+print( sys.argv[1] , "+" , sys.argv[2] , "=" , end=" " )
+print( int( sys.argv[1] ) + int( sys.argv[2] ))
+
+# 浮動小数点数にすると
+import sys
+print( sys.argv[1] , "+" , sys.argv[2] , "=" , end=" " )
+print( float( sys.argv[1] ) + float( sys.argv[2] ))
+
+# 引数を3個にした場合
+import sys
+print( sys.argv[1] , "+" , sys.argv[2] , "+" , sys.argv[3] , "=" , end=" " )
+print( int( sys.argv[1] ) + int( sys.argv[2] ) + + int( sys.argv[3] ))
+
+# 検索③
+import sys
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+search = sys.argv[1]
+
+for i in range(len(name)):
+    if name[ i ] == search:
+       print( search , "の点は" , test[ i ] , "点です" )
+       break
+
+# 検索④
+import sys
+name = [ "A" , "B" , "C" , "D" , "E" ]
+test = [ 85 , 60 , 5, 100 , 50 ]
+
+score = sys.argv[1]
+val = int(score)
+for i in range(len(test)):
+    if test[ i ] == val:
+       print( val , "点は" , name[ i ] , "です" )
+       break
+
+# 二重ループ
+for x in range(0,10):
+    for y in range(0,10):
+        z = x*x + y*y
+        print( " x =" , x , "y =" , y , ": z=" , z )
+
+x = 0
+while x < 10:
+    y= 0
+    while y < 10:
+        z = x * x + y * y
+        print( " x =" , x , "y =" , y , ": z=" , z )
+        y += 1
+    x += 1
+
+# 二重ループの例①
+for x in range(1,10):
+    for y in range(1,10):
+	print( "{0}×{1}={2:2d} ".format( x , y , x * y  ) , end="" ) 
+    print()
+
+# 二重ループの例②
+for x in range(0,10):
+    for y in range(0,10):
+        if x == y:
+            print( "1 " , end="" )
+        else:
+            print( "0 " , end="" )
+    print()
+
+# 二重ループの例③
+for x in range(1,10):
+    for y in range(1,10):
+        if x == (10-y):
+           print( "1 " , end="")
+        else:
+           print( "0 " , end="")
+    print()
+
+# 二重ループの例④
+for i in range(1,10):
+   for j in range(1,i+1):
+      print( j , end="" ) 
+   print()
+
+# 二重ループの例⑤
+for i in range(1,10):
+  for j in range(1,(11-i)): 
+     print( j , end="" ) 
+  print ()
+
+# 二重ループの例⑥
+import math
+for i in range(0,11):
+  d = int( math.sqrt( 100 - i*i ))
+  for j in range(1,d+1): 
+    print( " " , end="" )
+  for j in range(d+1,11):  
+    print( "*" , end="" )
+  print()
+
+import math
+for i in range(0,11):
+  d = int(math.sqrt( 100 - i*i ))
+  print( d )
+
+# 二重ループの例⑦
+import math
+for i in range(0,11):
+   d = int(math.sqrt( 400 - 4*i*i ))
+   for j in range(1,d+1):
+       print( " " , end="" )
+   for j in range((d+1),21): 
+       print( "*" , end="" )
+   print()
+
+import math
+for i in range(0,11):
+  d = int(math.sqrt( 400 - 4*i*i ))
+  print( d )
+
+
+
+
+
+
+

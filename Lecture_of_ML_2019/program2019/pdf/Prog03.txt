@@ -1,0 +1,125 @@
+# •Ï”‚Ì—á
+
+x=25
+print( "x‚Ì’l‚Í" , x , "‚Å‚·" )
+x=30
+print( "x‚Ì’l‚Í" , x , "‚É•Ï‚í‚è‚Ü‚µ‚½" )
+
+x=25; print( "x‚Ì’l‚Í" , x , "‚Å‚·" )
+x=30; print( "x‚Ì’l‚Í" , x , "‚É•Ï‚í‚è‚Ü‚µ‚½" )
+
+x=25; print( "x‚Ì’l‚Í" , x , "‚Å‚·" ); x=30; print( "x‚Ì’l‚Í" , x , "‚É•Ï‚í‚è‚Ü‚µ‚½" )
+
+# ‚¢‚ë‚¢‚ë‚Ìƒf[ƒ^‚ðˆê‚Â‚Ì•Ï”‚É
+
+x=20; 
+print( "x is now" , x ); 
+x = 3.14;
+print( "but x is now" , x ); 
+x = "Hi";
+print( "but x is now" , x )
+
+# ®”Œ^i2i”j
+0b10111
+bin(1000)
+int("0b1111",2)
+
+# ®”Œ^i16i”j
+0x1f
+hex(125)
+int("0x123",16)
+
+# •‚“®¬”“_Œ^ Python ‚Ìê‡
+
+print( "{0:.30}".format(1/3) )
+print( "{0:.30}".format(1/10) )
+
+# •¡ŽG‚ÈŽ®
+
+import math
+x=math.sin(math.pi*0.1) + math.exp(math.log(math.pi+0.1))
+print(x)
+
+# ‘ã“ü‰‰ŽZŽq‚Ì—á
+x=10
+x+=5
+print(x)
+x=10
+x*=5
+print(x)
+x=10
+x+=x
+print(x)
+x*=x
+print(x)
+
+# ˜_—Ž®
+3 == 3
+3 > 2 and 4 > 3
+"abc" == "abc" or "xyz" == "XYZ"
+
+# ˜_—Ž®‚Ì—á‡@
+3 > 2
+3 != 3
+3 > 2 and 3 == 3
+3 > 2 and 3 != 2
+3 > 2 and 3 != 3
+3 > 2 or 2 != 2
+3 > 2 and 3 == 2
+3 > 2 or 3 == 2
+
+# ˜_—Ž®‚Ì—á‡A
+True == True
+True == False
+True and True
+True and False
+True or False
+True and False or True
+
+# •¡ŽG‚È˜_—Ž®
+
+math.pi > 3.14 and ( math.e > 2.7 or 3 != 2 or math.sin(3.4) > 0.0 ) and "pro" in ( "python"+" programmig" )
+
+# ðŒ•¶‡A
+x = 5
+a = -10
+if a > 0: x = 3
+print( x )
+
+# ðŒ•¶‡B
+x = -10
+if x > 0: y = x
+if x <=0: y = -x
+print( y )
+
+# ðŒ•¶‡C
+x = 5
+if x % 2 == 0: print( x , "‚Í‹ô”" )
+if x % 2 != 0: print( x , "‚ÍŠï”" )
+
+# ðŒ•¶‡D
+x = 15
+if x % 3 == 0: print( x , "‚Í3‚Ì”{”" )
+if x % 3 != 0: print( x , "‚Í3‚Ì”{”‚Å‚Í‚È‚¢" )
+
+# ðŒ•¶‡E
+year = 2019
+if year % 4 == 0: print( year , "”N‚Í‰[”N" )
+if year % 4 != 0 : print( year , "”N‚Í‰[”N‚Å‚Í‚È‚¢" )
+
+# ðŒ•¶‡F
+x = "female"
+if x == "male" : print( x , "‚Í’j«" )
+if x == "female": print( x , "‚Í’j«‚Å‚Í‚È‚¢" )
+
+# ðŒ•¶‡G
+x="abcde"
+if len(x) > 3 :print( "x > 3" )
+if len(x) <= 3 : print( "x <= 3" )
+
+# ðŒ•¶‡H
+x="abcde"
+if len(x) > 3 : x=x.upper() ; x=x*2
+if len(x) <= 3 : x=x+"efg" ; x=x*2
+print(x) 
+

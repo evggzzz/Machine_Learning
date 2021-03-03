@@ -1,0 +1,369 @@
+# 二次元配列の要素への代入②
+a=[0]*4
+
+for i in range(4):
+    a[ i ] = [0]*4
+    for j in range(4):
+        if i == j:
+            a[ i ][ j ] = 1
+        else:
+            a[ i ][ j ] = 0
+            
+for i in range(4):
+    for j in range(4):
+        print( a[ i ][ j ] , end=" " )
+    print()
+
+
+# 二次元配列の要素への代入③
+a=[]
+
+for i in range(4):
+    a.append([])
+    for j in range(i+1):
+        if i == j:
+            a[ i ].append(1)
+        else:
+            a[ i ].append(0)
+            
+for i in range(4):
+    for j in range(i+1):
+        print( a[ i ][ j ] , end=" " )
+    print()
+
+# 二次元配列の要素への代入④
+a=[]
+
+for i in range(4):
+    a.append([])
+    for j in range(4-i):
+        if i+j == 3:
+            a[ i ].append(1)
+        else:
+            a[ i ].append(0)
+            
+for i in range(4):
+    for j in range(4-i):
+        print( a[ i ][ j ] , end=" " )
+    print()
+
+# 各人の平均点を求めるプログラム①
+p = [
+     [1,70,60,83],
+     [2,43,49,76],
+     [3,59,79,43],
+     [4,67,74,83]
+]
+
+for i in range(4):
+    sum = 0
+    for j in range(1,4):
+        sum += p[i][j]
+    ave = sum // 3
+    print( "出席番号 {0} の人の平均点は {1} です".format( p[i][0] , ave ) ) 
+
+# 各人の平均点を求めるプログラム②'
+p = [
+     [1,70,60,83],
+     [2,43,49,76],
+     [3,59,79,43],
+     [4,67,74,83]
+]
+
+for i in range(len(p)):
+    sum = 0
+    for j in range(1,len(p[i])):
+        sum += p[i][j]
+    ave = sum // (len(p[i])-1)
+    print( "出席番号 {0} の人の平均点は {1} です".format( p[i][0] , ave ) ) 
+
+# 各人の平均点を求めるプログラム②''
+p = [
+     [1,70,60,83,65],
+     [2,43,49,76,70],
+     [3,59,79,43,28],
+     [4,67,74,83,81],
+     [5,91,80,95,100]
+]
+
+for i in range(len(p)):
+    sum = 0
+    for j in range(1,len(p[i])):
+        sum += p[i][j]
+    ave = sum // (len(p[i])-1)
+    print( "出席番号 {0} の人の平均点は {1} です".format( p[i][0] , ave ) ) 
+
+# 各人の平均点を求めるプログラム③
+p = [
+     [1,70,60,83],
+     [2,43,49,76],
+     [3,59,79,43],
+     [4,67,74,83],
+]
+
+for a in p:
+    sum = 0
+    for i in range(1,len(a)):
+        sum += a[ i ]
+    ave = sum // (len(a)-1)
+    print( "出席番号 {0} の人の平均点は {1} です".format( a[0] , ave ) ) 
+
+
+# 各人の平均点を求めるプログラム③'
+p = [
+     [1,70,60,83],
+     [2,43,49,76],
+     [3,59,79,43],
+     [4,67,74,83],
+]
+
+for a in p:
+    sum = 0
+    count = 0
+    for i in a:
+        if count > 0:
+            sum += i
+        count+=1
+    ave = sum // (len(a)-1)
+    print( "出席番号 {0} の人の平均点は {1} です".format( a[0] , ave ) ) 
+
+
+# 各人の平均点を求めるプログラム④
+p = [
+     [1,70,60,83],
+     [2,43,49,76],
+     [3,59,79,43],
+     [4,67,74,83]
+]
+
+ave=[]
+for i in range(len(p)):
+    sum = 0
+    for j in range(1,len(p[i])):
+        sum += p[i][j]
+    ave.append( sum // (len(p[i])-1) )
+    print( "出席番号 {0} の人の平均点は {1} です".format( p[i][0] , ave[i] ) ) 
+
+# 素数を判定するプログラム
+n=int(input())
+
+for x in range(2,n):
+    if n % x == 0:
+        print( "この数字は素数ではありません" )
+        break
+
+
+# 素数を判定するプログラム
+n=int(input())
+
+p=1
+for x in range(2,n):
+    if n % x == 0:
+        p = 0
+        break
+
+if p == 0:
+    print( "この数字は素数ではありません" )
+else:
+    print( "この数字は素数です" )
+
+# 素数を判定するプログラム
+n=int(input())
+
+for x in range(2,n):
+    if n % x == 0:
+        print( "この数字は素数ではありません" )
+        break
+else:
+    print( "この数字は素数です" )
+
+
+# 素数を印字するプログラム
+for n in range(2,21):
+    p=1
+    for x in range(2,n):
+        if n % x == 0:
+            p = 0
+            break
+    if p == 1: 
+        print( n , "は素数" )
+
+# エラトステネスの篩: プログラム例①
+sieve = [1]*101
+
+sieve[0]=0
+sieve[1]=0
+
+i=2
+for j in range(i*2,len(sieve),i):
+   sieve[j]=0
+
+
+for i in range(len(sieve)):
+    if sieve[i] !=0:
+        print( i , end=" " )
+
+# エラトステネスの篩: プログラム例②
+sieve = [1]*101
+
+sieve[0]=0
+sieve[1]=0
+
+for i in range(2,4):
+     for j in range(i*2,len(sieve),i):
+         sieve[j]=0
+
+
+for i in range(len(sieve)):
+    if sieve[i] !=0:
+        print( i , end=" " )
+
+# エラトステネスの篩: プログラム例③
+sieve = [1]*101
+
+sieve[0]=0
+sieve[1]=0
+
+for i in range(2,5)
+    for j in range(i*2,len(sieve),i):
+        sieve[j]=0
+
+for i in range(len(sieve)):
+    if sieve[i] !=0:
+        print( i , end=" " )
+
+# エラトステネスの篩: プログラム例④
+sieve = [1]*101
+
+sieve[0]=0
+sieve[1]=0
+
+for i in range(2,6)
+    for j in range(i*2,len(sieve),i):
+        sieve[j]=0
+
+for i in range(len(sieve)):
+    if sieve[i] !=0:
+        print( i , end=" " )
+
+# エラトステネスの篩①
+sieve = [1]*101
+
+sieve[0]=0
+sieve[1]=0
+
+for i in range(2,len(sieve)):
+    for j in range(i*2,len(sieve),i):
+        sieve[j]=0
+
+
+for i in range(len(sieve)):
+    if sieve[i] !=0:
+        print( i , end=" " )
+
+# エラトステネスの篩②
+sieve = [1]*101
+for i in range(len(sieve)):
+    sieve[i]=i
+
+sieve[0]=0
+sieve[1]=0
+
+for i in range(2,len(sieve)):
+    for j in range(i*2,len(sieve),i):
+        sieve[j]=0
+
+for p in sieve:
+    if p != 0:
+        print( p , end=" " )
+
+# バブルソートのプログラム①
+p=[60,2,11,82,29,21,24,98,51,24]
+
+i = 0
+print(p)
+for j in range(len(p)-1,i,-1):
+    if p[j] < p[j-1]:
+        work = p[j]
+        p[j] = p[j-1]
+        p[j-1] = work
+    print( p )
+
+# バブルソートのプログラム②
+p=[2, 60, 11, 21, 82, 29, 24, 24, 98, 51]
+
+i = 1
+print(p)
+for j in range(len(p)-1,i,-1):
+    if p[j] < p[j-1]:
+        work = p[j]
+        p[j] = p[j-1]
+        p[j-1] = work
+    print( p )
+
+# バブルソートのプログラム③
+p=[2, 11, 60, 21, 24, 82, 29, 24, 51, 98]
+
+i = 2
+print(p)
+for j in range(len(p)-1,i,-1):
+    if p[j] < p[j-1]:
+        work = p[j]
+        p[j] = p[j-1]
+        p[j-1] = work
+    print( p )
+
+# バブルソートのプログラム④
+p=[2, 11, 21, 60, 24, 24, 82, 29, 51, 98]
+
+i = 3
+print(p)
+for j in range(len(p)-1,i,-1):
+    if p[j] < p[j-1]:
+        work = p[j]
+        p[j] = p[j-1]
+        p[j-1] = work
+    print( p )
+
+# バブルソートのまとめ②
+p=[60,2,11,82,29,21,24,98,51,24]
+
+for i in range(0,len(p)-1):
+    print(p)
+    for j in range(len(p)-1,i,-1):
+        if p[j] < p[j-1]:
+            work = p[j]
+            p[j] = p[j-1]
+            p[j-1] = work
+
+print(p)
+
+# バブルソートの例①
+p=[60,2,11,82,29,21,24,98,51,24]
+print(p)
+
+for i in range(0,len(p)-1):
+    for j in range(len(p)-1,i,-1):
+        if p[j] > p[j-1]:
+            work = p[j]
+            p[j] = p[j-1]
+            p[j-1] = work
+
+print(p)
+
+# バブルソートの例②
+import random
+
+p=[0]*10
+for i in range(len(p)):
+    p[i] = random.randint(0,100)
+print(p)
+
+for i in range(0,len(p)-1):
+    for j in range(len(p)-1,i,-1):
+        if p[j] < p[j-1]:
+            work = p[j]
+            p[j] = p[j-1]
+            p[j-1] = work
+
+print(p)
